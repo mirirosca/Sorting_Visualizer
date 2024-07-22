@@ -4,6 +4,7 @@ let audioCtx = null;
 let title = null; 
 let paragraph = null;
 
+
 function playNote(freq) {
     if (audioCtx == null) {
         audioCtx = new (
@@ -26,14 +27,13 @@ function playNote(freq) {
 // funzione init collegata al form
 
 function init() {
-    const inputValue = document.getElementById('number-input').value;
+    const inputValue = document.getElementById("number-input").value;
     const n = parseInt(inputValue);
 
     if (isNaN(n) || n < 2) {
         alert("Please enter a number greater than 1");
         return;
     }
-    // ciclo for che crea tot numero randomici dentro l'array
 
     array = [];
     for (let i = 0; i < n; i++) {
@@ -41,6 +41,9 @@ function init() {
     }
     showBars();
 }
+
+
+// funzioni per ogni algoritmo 
 
 function playBubbleSort() {
     info("Bubble Sort");
@@ -281,25 +284,23 @@ function showBars(move) {
   }
 }
 
+// funzione per creare paragrafo descrittivo per ogni algoritmo 
+
 function info(nameOfFunction) {
   const displayInfo = document.getElementById("displayInfo");
 
-  // Create the h2 element only once
   if (!title) {
       title = document.createElement("h2");
       displayInfo.appendChild(title);
   }
   
-  // Update the text content of the h2 element
   title.innerHTML = nameOfFunction;
 
-  // Create the paragraph element only once
   if (!paragraph) {
       paragraph = document.createElement("p");
       displayInfo.appendChild(paragraph);
   }
 
-  // Update the text content of the paragraph element
   if (nameOfFunction === "Bubble Sort") {
       paragraph.innerHTML = "is a simple comparison-based sorting algorithm. It works by repeatedly stepping through the list to be sorted, comparing adjacent items and swapping them if they are in the wrong order. The pass through the list is repeated until the list is sorted.";
   } else if (nameOfFunction === "Selection Sort") {
@@ -314,3 +315,17 @@ function info(nameOfFunction) {
       paragraph.innerHTML = "is a comparison-based sorting algorithm that uses a binary heap data structure to sort elements by repeatedly removing the largest element from the heap and rebuilding the heap.";
   }
 }
+
+function adjustMaxAttribute() {
+    const input = document.getElementById('number-input');
+    if (window.innerWidth < 769) {
+        input.setAttribute('max', '20');
+    } else {
+        input.setAttribute('max', '50');
+    }
+}
+// Adjust the max attribute on page load
+adjustMaxAttribute();
+
+// Adjust the max attribute on window resize
+window.addEventListener('resize', adjustMaxAttribute);
