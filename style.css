@@ -95,4 +95,8 @@ button:active {
     text-align: center;
   }
 
+  .bar {
+    width: 15px;
+  }
+
 }
