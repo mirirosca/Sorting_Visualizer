@@ -1,0 +1,92 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: raleway;
+}
+
+#container{
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.bar {
+  width: 20px;
+  background-color: rgb(212, 53, 132);
+  margin: 1px;
+}
+
+
+#question-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+button,
+input {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: rgb(241, 227, 133);
+  border: 2px solid rgb(212, 53, 132);
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: rgb(212, 53, 132);
+}
+
+button:active {
+  color: white;
+  background-color: rgb(142, 10, 76);
+}
+
+#question-form div {
+  max-width: 500px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#question-form input {
+  width: 50px;
+}
+
+#displayInfo {
+  display: flex;
+  gap: 2rem;
+  width: 80%;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+#displayInfo h2 {
+  text-wrap: nowrap;
+  font-size: 2.5rem;
+}
+
+#displayInfo p {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px){
+  #displayInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+}

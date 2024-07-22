@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sorting Visualizer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Sorting Visualizer</h1>
+    <div id="container"></div>
+
+    <hr>
+
+    <div id="question-form">
+        <form action="" onsubmit="init(); return false;">
+            <input id="number-input" type="number" min="2" max="50" placeholder="Enter number of bars" required> 
+            <button type="submit">Submit</button>
+        </form>
+        <div>
+          <button onClick="playBubbleSort()">Bubble Sort</button>
+          <button onClick="playSelectionSort()">Selection Sort</button>
+          <button onClick="playInsertionSort()">Insertion Sort</button>
+          <button onClick="playMergeSort()">Merge Sort</button>
+          <button onClick="playQuickSort()">Quick Sort</button>
+          <button onClick="playHeapSort()">Heap Sort</button>
+        </div>
+    </div>
+
+    <div id="displayInfo"></div>
+    <script src="script.js"></script>
+</body>
+</html>
